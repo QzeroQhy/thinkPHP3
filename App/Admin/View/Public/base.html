@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><block name="title">标题</block></title>
+<!--<base href="__SELF__" />-->
+<link rel="shortcut icon" href="__PUBLIC__/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="__PUBLIC__/static/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/bootstrap/extend/bootstrap-table/css/bootstrap-table.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/bootstrap/extend/daterangepicker/css/daterangepicker.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/ionicons/css/ionicons.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/adminLTE/css/AdminLTE.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/adminLTE/css/skins/_all-skins.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/static/jquery/extend/jquery-toastr/css/toastr.min.css" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/Common.css" />
+<!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+<!-- <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script> -->
+<!--[if lt IE 9]>
+<script src="__PUBLIC__/static/bootstrap/js/respond.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/js/html5shiv.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/static/jquery/jquery.min.js"></script>
+<script src="__PUBLIC__/static/jquery/extend/jquery-ui/jquery-ui.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/extend/bootstrap-table/js/bootstrap-table.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/extend/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/extend/daterangepicker/js/moment.min.js"></script>
+<script src="__PUBLIC__/static/bootstrap/extend/daterangepicker/js/daterangepicker.js"></script>
+<script src="__PUBLIC__/static/jquery/extend/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="__PUBLIC__/static/adminLTE/js/app.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/layer/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/static/jquery/extend/jquery-toastr/js/toastr.min.js"></script>
+</head>
+
+<body class="hold-transition skin-green fixed sidebar-mini">
+<div class="wrapper">
+	<!-- 头部 -->
+	<header class="main-header">
+		<a href="#" class="logo" target="_blank">
+			<span class="logo-mini">logo</span>
+			<span class="logo-lg"><b>logo</b>Admin</span>
+		</a>
+		<nav class="navbar navbar-static-top" role="navigation">
+			<a href="javascript:void(0);" class="sidebar-toggle" data-toggle="offcanvas" role="button"><!--push-menu-->
+				<span class="sr-only">Toggle navigation</span>
+			</a>
+			<div id="nav" class="pull-left">
+				<!--如果不想在顶部显示角标,则给ul加上disable-top-badge类即可-->
+				<ul class="nav nav-tabs nav-addtabs" role="tablist">
+				</ul>
+			</div>
+			<div class="navbar-custom-menu">
+				<ul class="nav navbar-nav">
+					<li><a href="#" target="_blank"><i class="fa fa-home"></i></a></li>
+					<li class="dropdown notifications-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell-o"></i>
+							<span class="label label-warning"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="header">最新消息</li>
+							<li>
+								<ul class="menu">
+									<li>123</li>
+									<li>456</li>
+								</ul>
+							</li>
+							<li class="footer">
+								<a href="#" target="_blank">查看更多</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown messages-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-github"></i>
+							<span class="label label-info"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="header">最近安排</li>
+							<li>
+								<ul class="menu">
+								</ul>
+							</li>
+							<li class="footer">
+								<a href="#" target="_blank">查看更多</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);" data-toggle="wipecache" title="清空缓存"><i class="fa fa-trash"></i></a></li>
+					<li class="dropdown hidden-xs">
+						<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language"></i></a>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="#">简体中文</a></li>
+							<li class=""><a href="#">English</a></li>
+						</ul>
+					</li>
+					<li class="hidden-xs"><a href="#" data-toggle="fullscreen"><i class="fa fa-arrows-alt"></i></a></li>
+					<li class="dropdown user user-menu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<img src="__PUBLIC__/static/adminLTE/images/user2-160x160.jpg" class="user-image" alt="Admin" />
+							<span class="hidden-xs">Admin</span>
+						</a>
+						<ul class="dropdown-menu">
+							<li class="user-header">
+								<img src="__PUBLIC__/static/adminLTE/images/user2-160x160.jpg" class="img-circle" alt="Admin" />
+								<p>Admin<small>2017-07-18 18:16:04</small></p>
+							</li>
+							<li class="user-body">
+								<div class="row">
+									<div class="col-xs-4 text-center">
+										<a href="#" target="_blank">官网</a>
+									</div>
+									<div class="col-xs-4 text-center">
+										<a href="#" target="_blank">论坛</a>
+									</div>
+									<div class="col-xs-4 text-center">
+										<a href="#" target="_blank">文档</a>
+									</div>
+								</div>
+							</li>
+							<li class="user-footer">
+								<div class="pull-left">
+									<a href="#" class="btn btn-default btn-flat addtabsit">个人资料</a>
+								</div>
+								<div class="pull-right">
+									<a href="#" class="btn btn-default btn-flat">注销</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="javascript:void(0);" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- /头部 -->
+	<!-- 左侧栏 -->
+	<aside class="main-sidebar">
+		<section class="sidebar">
+			<div class="user-panel">
+				<div class="pull-left image"><img src="__PUBLIC__/static/adminLTE/images/user3-128x128.jpg" class="img-circle" alt="User Image"></div>
+				<div class="pull-left info">
+					<p>Admin</p>
+					<a href="#"><i class="fa fa-circle text-success"></i>在线</a>
+				</div>
+			</div>
+			<form action="#" method="get" class="sidebar-form">
+				<div class="input-group">
+					<input type="text" name="q" class="form-control" placeholder="搜索..." />
+					<span class="input-group-btn">
+						<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+					</span>
+				</div>
+			</form>
+			<ul class="sidebar-menu">
+				<li class="header">主导航</li>
+				<li class="active treeview">
+					<a href="#">
+						<i class="fa fa-dashboard"></i>
+						<span>仪表板</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="index.html"><i class="fa fa-circle-o"></i>仪表板1</a></li>
+						<li class="active"><a href="admin.html"><i class="fa fa-circle-o"></i>仪表板2</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-files-o"></i>
+						<span>布局选项</span>
+						<span class="pull-right-container"><span class="label label-primary pull-right">4</span></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i>顶部导航</a></li>
+						<li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i>盒子布局</a></li>
+						<li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>固定布局</a></li>
+						<li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i>侧边栏</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-th"></i> <span>窗口小部件</span>
+						<span class="pull-right-container"><small class="label pull-right bg-green">new</small></span>
+					</a>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-pie-chart"></i>
+						<span>图表</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+						<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+						<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+						<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-laptop"></i>
+						<span>用户界面元素</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+						<li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+						<li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+						<li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+						<li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+						<li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-edit"></i>
+						<span>形式</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+						<li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+						<li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-table"></i>
+						<span>表格</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+						<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="pages/calendar.html">
+						<i class="fa fa-calendar"></i>
+						<span>日历</span>
+						<span class="pull-right-container">
+							<small class="label pull-right bg-red">3</small>
+							<small class="label pull-right bg-blue">17</small>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="pages/mailbox/mailbox.html">
+						<i class="fa fa-envelope"></i>
+						<span>邮箱</span>
+						<span class="pull-right-container">
+							<small class="label pull-right bg-yellow">12</small>
+							<small class="label pull-right bg-green">16</small>
+							<small class="label pull-right bg-red">5</small>
+						</span>
+					</a>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-folder"></i>
+						<span>实例</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+						<li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+						<li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+						<li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+						<li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+						<li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+						<li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+						<li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+						<li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+					</ul>
+				</li>
+				<li class="treeview">
+					<a href="#">
+						<i class="fa fa-share"></i>
+						<span>多级</span>
+						<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+					</a>
+					<ul class="treeview-menu">
+						<li><a href="#"><i class="fa fa-circle-o"></i>Level One</a></li>
+						<li>
+							<a href="#">
+								<i class="fa fa-circle-o"></i>Level One
+								<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+							</a>
+							<ul class="treeview-menu">
+								<li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+								<li>
+									<a href="#">
+										<i class="fa fa-circle-o"></i>Level Two
+										<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+									</a>
+									<ul class="treeview-menu">
+										<li><a href="#"><i class="fa fa-circle-o"></i>Level Three</a></li>
+										<li><a href="#"><i class="fa fa-circle-o"></i>Level Three</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#"><i class="fa fa-circle-o"></i>Level One</a></li>
+					</ul>
+				</li>
+				<li><a href="documentation/index.html"><i class="fa fa-book"></i><span>文档</span></a></li>
+				<li class="header">标签</li>
+				<li><a href="#"><i class="fa fa-circle-o text-red"></i><span>重要</span></a></li>
+				<li><a href="#"><i class="fa fa-circle-o text-yellow"></i><span>警告</span></a></li>
+				<li><a href="#"><i class="fa fa-circle-o text-aqua"></i><span>信息</span></a></li>
+			</ul>
+		</section>
+	</aside>
+	<!-- /左侧栏 -->
+	<!-- 内容区 -->
+	<div class="content-wrapper">
+		<section class="content-header">
+			<h1>控制台<small>控制面板</small></h1>
+			<ol class="breadcrumb">
+				<li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+				<li class="active">控制台</li>
+			</ol>
+		</section>
+		<block name="main">
+		</block>
+	</div>
+	<!-- /内容区 -->
+	<footer class="main-footer">
+		<div class="pull-right hidden-xs"><b>版本</b> 1.0.0</div>
+		<strong>版权 &copy;2017 <a href="#">QZero或Zero Degree工作室</a>.</strong> 版权所有
+	</footer>
+	<!-- 控制区 -->
+	<aside class="control-sidebar control-sidebar-dark">
+		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+			<li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+			<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane" id="control-sidebar-home-tab">
+				<h3 class="control-sidebar-heading">Recent Activity</h3>
+				<ul class="control-sidebar-menu">
+					<li>
+						<a href="javascript:void(0)">
+							<i class="menu-icon fa fa-birthday-cake bg-red"></i>
+							<div class="menu-info">
+								<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+								<p>Will be 23 on April 24th</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<i class="menu-icon fa fa-user bg-yellow"></i>
+							<div class="menu-info">
+								<h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+								<p>New phone +1(800)555-1234</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+							<div class="menu-info">
+								<h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+								<p>nora@example.com</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<i class="menu-icon fa fa-file-code-o bg-green"></i>
+							<div class="menu-info">
+								<h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+								<p>Execution time 5 seconds</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<h3 class="control-sidebar-heading">Tasks Progress</h3>
+				<ul class="control-sidebar-menu">
+					<li>
+						<a href="javascript:void(0)">
+							<h4 class="control-sidebar-subheading">Custom Template Design<span class="label label-danger pull-right">70%</span></h4>
+							<div class="progress progress-xxs">
+								<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<h4 class="control-sidebar-subheading">Update Resume<span class="label label-success pull-right">95%</span></h4>
+							<div class="progress progress-xxs">
+								<div class="progress-bar progress-bar-success" style="width: 95%"></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<h4 class="control-sidebar-subheading">Laravel Integration<span class="label label-warning pull-right">50%</span></h4>
+							<div class="progress progress-xxs">
+								<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)">
+							<h4 class="control-sidebar-subheading">Back End Framework<span class="label label-primary pull-right">68%</span></h4>
+							<div class="progress progress-xxs">
+								<div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+			<div class="tab-pane" id="control-sidebar-settings-tab">
+				<form method="post">
+					<h3 class="control-sidebar-heading">General Settings</h3>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Report panel usage<input type="checkbox" class="pull-right" checked /></label>
+						<p>Some information about this general settings option</p>
+					</div>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Allow mail redirect<input type="checkbox" class="pull-right" checked /></label>
+						<p>Other sets of options are available</p>
+					</div>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Expose author name in posts<input type="checkbox" class="pull-right" checked /></label>
+						<p>Allow the user to show his name in blog posts</p>
+					</div>
+					<h3 class="control-sidebar-heading">Chat Settings</h3>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Show me as online<input type="checkbox" class="pull-right" checked /></label>
+					</div>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Turn off notifications<input type="checkbox" class="pull-right" /></label>
+					</div>
+					<div class="form-group">
+						<label class="control-sidebar-subheading">Delete chat history<a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a></label>
+					</div>
+				</form>
+			</div>
+		</div>
+	</aside>
+	<div class="control-sidebar-bg"></div>
+	<!-- /控制区 -->
+</div>
+<block name="script"></block>
+</body>
+</html>

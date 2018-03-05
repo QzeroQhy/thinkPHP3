@@ -1,0 +1,87 @@
+<extend name="Public/base"/>
+<block name="main">
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header">
+					<form action="#" id="serachFormId" role="form">
+					<div class="row">
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<input type="text" name="keywords" id="keywords" class="form-control" placeholder="搜索：用户名/昵称/Email" />
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								<input name="create_time" type="text" class="form-control" id="create_time" placeholder="创建时间" style="cursor:pointer;" readonly="readonly" />
+								<span class="input-group-addon" style="cursor:pointer;" onclick="$('#create_time').val('');"><i class="glyphicon glyphicon-remove"></i></span>
+							</div>
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+							<div class="input-group">
+								<span class="input-group-addon">状态：</span>
+								<select name="status" id="status" class="form-control">
+									<option value="">全部</option>
+									<option value="1">已启用</option>
+									<option value="0">禁用</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<button type="button" id="serachBtn" class="btn btn-success">搜索</button>
+							<button type="button" id="resetBtn" class="btn btn-default">重置</button>
+						</div>
+					</div>
+					</form>
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="toolbar" class="btn-group">
+								<a href="javascript:void(0);" class="btn btn-primary btn-add" title="添加"><i class="fa fa-plus"></i>添加</a>
+								<a href="javascript:void(0);" class="btn btn-danger btn-delall disabled" title="删除"><i class="fa fa-trash"></i>删除</a><!--  onclick="deleteAll();" -->
+								<div class="dropdown btn-group">
+									<a href="javascript:void(0);" class="btn btn-info dropdown-toggle disabled btn-more" data-toggle="dropdown" title="更多">更多 <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li role="presentation"><a href="javascript:void(0);">设为启用</a></li>
+										<li role="presentation"><a href="javascript:void(0);">设为禁用</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-body">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Rendering engine</th>
+								<th>Browser</th>
+								<th>Platform(s)</th>
+								<th>Engine version</th>
+								<th>CSS grade</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Rendering engine</td>
+								<td>Browser</td>
+								<td>Platform(s)</td>
+								<td>Engine version</td>
+								<td>CSS grade</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th>Rendering engine</th>
+								<th>Browser</th>
+								<th>Platform(s)</th>
+								<th>Engine version</th>
+								<th>CSS grade</th>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</block>

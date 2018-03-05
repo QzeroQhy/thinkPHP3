@@ -1,0 +1,158 @@
+<extend name="Public/base"/>
+<block name="main">
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box">
+				<div class="box-header" style="padding-bottom:0;">
+					<form action="#" id="serachFormId" role="form">
+					<div class="row">
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<input type="text" name="keywords" id="keywords" class="form-control" placeholder="搜索：用户名/昵称/Email" />
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								<input name="create_time" type="text" class="form-control" id="create_time" placeholder="创建时间" style="cursor:pointer;" readonly="readonly" />
+								<span class="input-group-addon" style="cursor:pointer;" onclick="$('#create_time').val('');"><i class="glyphicon glyphicon-remove"></i></span>
+							</div>
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-2">
+							<div class="input-group">
+								<span class="input-group-addon">状态：</span>
+								<select name="status" id="status" class="form-control">
+									<option value="">全部</option>
+									<option value="1">已启用</option>
+									<option value="0">禁用</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+							<button type="button" id="serachBtn" class="btn btn-success">搜索</button>
+							<button type="button" id="resetBtn" class="btn btn-default">重置</button>
+						</div>
+					</div>
+					</form>
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="toolbar" class="btn-group">
+								<a href="{:U('Admin/Role/add')}" class="btn btn-primary btn-add" title="添加"><i class="fa fa-plus"></i>添加</a>
+								<a href="javascript:void(0);" class="btn btn-danger btn-delall disabled" title="删除"><i class="fa fa-trash"></i>删除</a><!--  onclick="deleteAll();" -->
+								<div class="dropdown btn-group">
+									<a href="javascript:void(0);" class="btn btn-info dropdown-toggle disabled btn-more" data-toggle="dropdown" title="更多">更多 <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li role="presentation"><a href="javascript:void(0);">设为启用</a></li>
+										<li role="presentation"><a href="javascript:void(0);">设为禁用</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-body" style="padding:0 10px;">
+					<table id="bsTable" class="table table-bordered table-hover">
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function (){
+	var columns=[
+		{title:'全选',field:'select',checkbox:true,},//复选框
+		{title:'ID',field:'id'},
+		{title:'角色名称',field:'name'},
+		{title:'角色描述',field:'remark',},
+		{title:'状态',field:'status',},
+		{title:'操作',formatter:actionFormatter,},
+	];
+	$bsTable=$("#bsTable");
+	$bsTable.bootstrapTable('destroy');
+	$bsTable.bootstrapTable({
+		url:"{:U('Role/index')}",
+		method:"post",
+		dataType:"json",
+		contentType:"application/x-www-form-urlencoded",
+		dataField: "rows",//这是返回的json数组的key.默认好像是"rows".这里前后端一致
+		//height:$(window).height()-200,
+		escape:true,
+		undefinedText:"（无）",
+		sortName:"id",
+		sortOrder:"desc",
+		cache:false,
+		toolbar:"#toolbar",
+		//search:true,
+		showRefresh:true,
+		showToggle:true,
+		showColumns:true,
+		//striped:true,
+		pagination:true,
+		sidePagination:"server",
+		smartDisplay:false,
+		paginationPreText:"上一页",
+		paginationNextText:"下一页",
+		//queryParamsType设置为undefined可以获取pageNumber，pageSize，searchText，sortName，sortOrder,设置为limit可以获取limit, offset, search, sort, order 
+		queryParamsType:"limit",
+		queryParams:queryParams,
+		uniqueId:"id",
+		minimumCountColumns:3,
+		responseHandler:responseHandler,
+		columns:columns,
+		onLoadSuccess: function () {
+			console.log('加载成功');
+		},
+		onLoadError: function () {
+			//$('#tabel').bootstrapTable('removeAll'); 
+			console.log('加载失败');
+		},
+		locale:'zh-CN',
+		onCheckAll:function(){
+			setBtnStatus($bsTable);
+		},
+		onUncheckAll:function(){
+			setBtnStatus($bsTable);
+		},
+		onCheck:function(){
+			setBtnStatus($bsTable);
+		},
+		onUncheck:function(){
+			setBtnStatus($bsTable);
+		},
+	});
+});
+
+function responseHandler(result){
+	if(result){
+		return {
+			"total":result.total,
+			"rows":result.rows
+		};
+	}else{
+		return {
+			"total":0,
+			"rows":[]
+		};
+	}
+}
+function queryParams(params){
+	return {
+		offset: params.offset,
+		pageSize: params.limit,
+		sort: params.sort,
+		sortOrder: params.order
+	};
+}
+//操作栏的格式化
+function actionFormatter(value, row, index){
+	var id = value;
+	var result = "";
+	result += "<a href='javascript:void(0);' class='btn btn-success btn-xs' onclick=\"EditViewById('" + id + "')\" title='编辑' style='margin-right:5px;'><i class='fa fa-pencil'></i></a>";
+	result += "<a href='javascript:void(0);' class='btn btn-danger btn-xs' onclick=\"DeleteByIds('" + id + "')\" title='删除' style='margin-right:5px;'><i class='fa fa-trash'></i></a>";
+	return result;
+}
+</script>
+</block>
